@@ -1,0 +1,114 @@
+
+.page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+body{
+    background-color: black;
+}
+
+.txt{
+    margin-top: 30px;
+    background: linear-gradient(to right, rgb(0, 17, 255), rgb(255, 0, 0));
+    text-shadow: grey 2px 2px 2px;
+    color: white;
+    height: 70px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    font-size: 1.5em;
+    margin-bottom: 22px;
+}
+
+.sabre{
+    width: 200px;
+    height: 600px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.poignée{
+    cursor: pointer;
+    display: flex;
+    height: 100px;
+    width: 25px;
+    flex-wrap: wrap;
+    background: linear-gradient(
+        to right,
+        rgb(153, 153, 153) 15%,
+        rgb(253, 253, 253) 45%,
+        rgb(255, 255, 255) 65%, 
+        rgb(151, 151, 151) 100%);
+    border-radius: 9px 9px 20px 20px;
+    border-bottom: solid rgb(168, 168, 168) 11px;
+    border-top: solid rgb(168, 168, 168) 10px;
+
+    &_btn{
+        height: 18px;
+        width: 6px;
+        position: relative;
+        top: 30px; left: 18px;
+        transform: scale(1.25, 1);
+        transform-origin: left 50%;
+        background-color: rgb(156, 19, 19);
+        border-left: solid 2px rgb(95, 12, 12);
+        border-radius: 3px;
+        transition: transform 80ms ease-in-out;
+    }
+    &_lines{
+        height: 30px;
+        width: 25px;
+        align-self: flex-end;
+        background: linear-gradient(
+            to right,
+            rgb(129, 129, 129) 5%,
+            rgb(226, 225, 225) 15%,
+            rgb(95, 95, 95) 20%,
+            rgb(212, 212, 212) 35%,
+            grey 40%,
+            rgb(236, 236, 236) 55%,
+            grey 60%,
+            rgb(231, 231, 231) 75%,
+            grey 80%,
+            rgb(209, 209, 209) 92%,
+            grey 100%,
+        );
+        margin-bottom: -1px;
+    }
+    &:active &_btn{
+        transform: scale(1, 1.01);
+    } 
+    &:active + .laser{
+        transform: scale(1, 1);
+    }
+}
+
+.laser{
+    transform: scale(1, 0);
+    transform-origin: center bottom;
+    transition: transform 220ms ease-out;
+    height: 400px;
+    width: 15px;
+    border-radius: 8px 8px 0px 0px;
+    background: linear-gradient(
+		to right,
+		rgba(229, 17, 21, 1) 0%,
+		rgba(254, 254, 254, 1) 40%,
+		rgba(254, 254, 254, 1) 47%,
+		rgba(254, 254, 254, 1) 61%,
+		rgba(229, 17, 21, 1) 100%
+    );
+    box-shadow: red 0px 0px 20px;
+    border-top: 2px solid rgb(229, 17, 21);
+}
+
+
+
